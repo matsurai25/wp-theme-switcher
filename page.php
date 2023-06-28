@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__) . "style.css"; ?>">
 
-<div class="wrapper">
-    <h1>MT Theme Switcher</h1>
+<div class="wrap">
+    <h1 class="wp-heading-inline">MT Theme Switcher</h1>
     <h2>これはなに？ / What is this?</h2>
     <p>
         時間と切り替え先テーマを指定することで、ダウンタイムなしのテーマ切り替えを行います。<br />
         By specifying the time and the theme to switch to, we will perform a seamless theme switch without any downtime.
         <br />
-        contact: <a href="https://twitter.com/matsurai25" target="_blank" rel="noopener noreferrer">https://twitter.com/matsurai25</a>
+        contact: <a href=" https://twitter.com/matsurai25" target="_blank" rel="noopener noreferrer">https://twitter.com/matsurai25</a>
     </p>
 
     <h2>現在のテーマ / Current Theme</h2>
