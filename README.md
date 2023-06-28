@@ -19,6 +19,11 @@
 
 ---
 
+## Overview
+
+- By specifying a time, you can switch to the specified theme on the first access after that time.
+- By uploading multiple versions of the theme, you can perform the switch without any downtime when it is necessary to update the theme based on time.
+
 ## How To Install
 
 - Place the `theme-switcher` folder in the `wp-content/plugins` directory.
