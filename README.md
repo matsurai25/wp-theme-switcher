@@ -7,7 +7,7 @@
 
 ## インストール
 
-- `wp-content/plugins` に `theme-switcher` フォルダを配置する
+- `wp-content/plugins` に `wp-theme-switcher` フォルダを配置する
 - WP の管理画面からプラグインを有効化する
 
 ## 使い方 / How To Use
@@ -26,7 +26,7 @@
 
 ## How To Install
 
-- Place the `theme-switcher` folder in the `wp-content/plugins` directory.
+- Place the `wp-theme-switcher` folder in the `wp-content/plugins` directory.
 - Activate the plugin from the WordPress admin dashboard.
 
 ## How To Use
