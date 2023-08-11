@@ -24,7 +24,7 @@
                 </div>
                 <div class="note-wrapper">
                     <div class="note">
-                        Switching date and time: <?php echo wp_date("Y-m-d H:i:s T", $data["unixtime"]) ?> (残り: <?php echo floor(($data["unixtime"] - wp_date("U")) / 360) * 0.1; ?>時間) <br />
+                        Switching date and time: <?php echo wp_date("Y-m-d H:i:s T", $data["unixtime"]) ?> (残り: <?php echo ThemeSwitcher::computeRemainingTime($data["unixtime"] - wp_date("U")); ?>) <br />
                         Switching destination: <?php echo $data["template"] ?><br />
                     </div>
                 </div>

@@ -130,6 +130,32 @@ if (!class_exists('ThemeSwitcher')) {
         {
             include plugin_dir_path(__FILE__) . "widget.php";
         }
+
+        public static function computeRemainingTime($time)
+        {
+            $MINUTE = 60;
+            $HOUR = 60 * $MINUTE;
+            $DAY = 24 * $HOUR;
+
+            $res = "";
+            if ($time >= $DAY) {
+                $n = floor($time / $DAY);
+                $res .=  $n . "日";
+                $time = $time - $n * $DAY;
+            }
+            if ($time >= $HOUR) {
+                $n = floor($time / $HOUR);
+                $res .=  $n . "時間";
+                $time = $time - $n * $HOUR;
+            }
+            if ($time >= $MINUTE) {
+                $n = floor($time / $MINUTE);
+                $res .=  $n . "分";
+                $time = $time - $n * $MINUTE;
+            }
+            $res .= $time . "秒";
+            return $res;
+        }
     }
 }
 
