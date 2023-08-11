@@ -44,6 +44,9 @@ if (!class_exists('ThemeSwitcher')) {
 
             // 管理画面にメニューを表示
             add_action('admin_menu', [self::$instance, 'addMenu']);
+
+            // ダッシュボードにウィジェット追加
+            add_action('wp_dashboard_setup', [self::$instance, 'addWidget']);
         }
 
         // 処理を実行
@@ -57,13 +60,14 @@ if (!class_exists('ThemeSwitcher')) {
         public static function addMenu()
         {
             add_submenu_page(
-                'tools.php',
-                'MT Theme Switcher',
-                'MT Theme Switcher',
+                'themes.php',
+                '時限切り替え設定',
+                '時限切り替え設定',
                 'manage_options',
                 'mt-theme-switcher',
                 [self::$instance, 'displayPage'],
-                'dashicons-admin-users',
+                '',
+                '',
                 10
             );
         }
@@ -114,6 +118,17 @@ if (!class_exists('ThemeSwitcher')) {
             wp_unschedule_event($data["unixtime"], self::EVENT_HOOK, [$data["template"]]);
             delete_option(self::EVENT_HOOK);
             include plugin_dir_path(__FILE__) . "page-deleted.php";
+        }
+
+        public static function addWidget()
+        {
+            global $wp_meta_boxes;
+            wp_add_dashboard_widget('custom_help_widget', '現在予定されている更新', [self::$instance, 'displayWidjet']);
+        }
+
+        public static function displayWidjet()
+        {
+            include plugin_dir_path(__FILE__) . "widget.php";
         }
     }
 }
